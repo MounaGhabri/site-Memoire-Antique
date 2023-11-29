@@ -4,33 +4,50 @@ import {AppMainComponent} from './app.main.component';
 @Component({
     selector: 'app-topbar',
     template: `
+	<link href="https://fonts.cdnfonts.com/css/antique" rel="stylesheet">
+
+      
+
         <div class="layout-topbar">
 			<div class="layout-topbar-wrapper">
                 <div class="layout-topbar-left">
-					<div class="layout-topbar-logo-wrapper">
-						<a href="#" class="layout-topbar-logo">
-							<img src="assets/layout/images/logo-mirage@2x.png" alt="mirage-layout" />
-							<span class="app-name">Mirage</span>
-						</a>
-					</div>
-
+				<!----	<div class="layout-topbar-logo-wrapper">
+						<a href="#" class="layout-topbar-logo"> -->
+						<!---	<img src="assets/layout/images/topbar/logo222.png" alt="mirage-layout" /> --->
+						<!----	<span class="app-name">Mirage</span>   --->
+						<!--- </a>
+					</div> --->
+                  <a>
+					<h5  style="font-family:algerian ">MEMOIRE ANTIQUE</h5>
+                           </a>
+						 
 					<a href="#" class="sidebar-menu-button" (click)="appMain.onMenuButtonClick($event)">
 						<i class="pi pi-bars"></i>
 					</a>
 
 					<a href="#" class="megamenu-mobile-button" (click)="appMain.onMegaMenuMobileButtonClick($event)">
-						<i class="pi pi-align-right megamenu-icon"></i>
+						   <i class="pi pi-align-right megamenu-icon"></i>
 					</a>
 
 					<a href="#" class="topbar-menu-mobile-button" (click)="appMain.onTopbarMobileMenuButtonClick($event)">
 						<i class="pi pi-ellipsis-v"></i>
 					</a>
 
+					
 					<div class="layout-megamenu-wrapper">
-						<a class="layout-megamenu-button" href="#" (click)="appMain.onMegaMenuButtonClick($event)">
+				<!-- Mega menu -->
+                    <!----
+				<a class="layout-megamenu-button" href="#" (click)="appMain.onMegaMenuButtonClick($event)">
 							<i class="pi pi-comment"></i>
-							Mega Menu
-						</a>
+				   Categories </a>	--->
+
+					
+							<!---
+						<div>
+                        <img src="assets/layout/images/topbar/logo222.png">
+						</div>	
+                                --->
+							
 						<ul class="layout-megamenu" [ngClass]="{'layout-megamenu-active fadeInDown': appMain.megaMenuActive}"
                             (click)="appMain.onMegaMenuClick($event)">
 							<li [ngClass]="{'active-topmenuitem': activeItem === 1}" (click)="mobileMegaMenuItemClick(1)">
@@ -101,8 +118,17 @@ import {AppMainComponent} from './app.main.component';
 						</ul>
 					</div>
                 </div>
+			    
                 <div class="layout-topbar-right fadeInDown">
+		
+
 					<ul class="layout-topbar-actions">
+
+                     
+
+
+								<!-- search -->
+								
 						<li #search class="search-item topbar-item" [ngClass]="{'active-topmenuitem': appMain.activeTopbarItem === search}">
 							<a href="#" class="topbar-search-mobile-button" (click)="appMain.onTopbarItemClick($event,search)">
 								<i class="topbar-icon pi pi-search"></i>
@@ -116,10 +142,17 @@ import {AppMainComponent} from './app.main.component';
                                 </li>
                             </ul>
                         </li>
+
+                            
+
+
+						<!--Calendar --->
+				
 						<li #calendar class="topbar-item" [ngClass]="{'active-topmenuitem': appMain.activeTopbarItem === calendar}">
-							<a href="#" (click)="appMain.onTopbarItemClick($event,calendar)">
-								<i class="topbar-icon pi pi-calendar"></i>
-							</a>
+						  <a href="#" >  
+							<!---	<i class="topbar-icon pi pi-calendar"></i>--->
+								ACCUEIL 
+							    </a>  
 							<ul class="fadeInDown" (click)="appMain.topbarItemClick = true">
 								<li class="layout-submenu-header">
 									<h1>Calendar</h1>
@@ -130,10 +163,18 @@ import {AppMainComponent} from './app.main.component';
 							</ul>
 						</li>
 
+						
+                      <!------message ---->
+
+
 						<li #message class="topbar-item" [ngClass]="{'active-topmenuitem': appMain.activeTopbarItem === message}">
-							<a href="#" (click)="appMain.onTopbarItemClick($event,message)">
-								<i class="topbar-icon pi pi-inbox"></i>
-							</a>
+						<!-----<a href="#" (click)="appMain.onTopbarItemClick($event,gift)">---->
+						<a href="#" (click)="appMain.onTopbarItemClick($event,message)">
+								<!----	<i class="topbar-icon pi pi-inbox"></i> --->
+                              
+							  BOUTIQUE
+
+							  </a> 
 							<ul class="fadeInDown">
 								<li class="layout-submenu-header">
 									<h1>Messages</h1>
@@ -173,11 +214,13 @@ import {AppMainComponent} from './app.main.component';
 								</li>
 							</ul>
 						</li>
+                      <!---Deals ------>
 
 						<li #gift class="topbar-item" [ngClass]="{'active-topmenuitem': appMain.activeTopbarItem === gift}">
-							<a href="#" (click)="appMain.onTopbarItemClick($event,gift)">
-								<i class="topbar-icon pi pi-envelope"></i>
-							</a>
+						<a href="#" (click)="appMain.onTopbarItemClick($event,gift)"> 
+							<!----	<i class="topbar-icon pi pi-envelope"></i> --->
+							CONTACT
+							</a> 
 							<ul class="fadeInDown">
 								<li class="layout-submenu-header">
 									<h1>Deals</h1>
@@ -239,9 +282,13 @@ import {AppMainComponent} from './app.main.component';
 								</li>
 							</ul>
 						</li>
-
+						   <!---Olivia Eklund: compte ------>
 						<li #profile class="topbar-item profile-item" [ngClass]="{'active-topmenuitem': appMain.activeTopbarItem === profile}">
-							<a href="#" (click)="appMain.onTopbarItemClick($event,profile)">
+						<!---	<a href="#" (click)="appMain.onTopbarItemClick($event,profile)"> --->
+
+                           "       "Panier
+                               <!------
+
                             <span class="profile-image-wrapper">
                                 <img src="assets/layout/images/topbar/avatar-eklund.png" alt="mirage-layout" />
                             </span>
@@ -250,6 +297,10 @@ import {AppMainComponent} from './app.main.component';
                                 <span>Design</span>
                             </span>
 							</a>
+
+
+
+			
 							<ul class="profile-item-submenu fadeInDown">
 								<li class="profile-submenu-header">
 									<div class="performance">
@@ -293,13 +344,22 @@ import {AppMainComponent} from './app.main.component';
 								</li>
 							</ul>
 						</li>
+                         ----->
+
+						<!-------flèche: à rappeler 
+                          
 						<li>
 							<a href="#" class="layout-rightpanel-button" (click)="appMain.onRightPanelButtonClick($event)">
 								<i class="pi pi-arrow-left"></i>
 							</a>
 						</li>
-                    </ul>
 
+
+                      fin flèche   ---->
+
+
+                    </ul>
+                    <!-------
 					<ul class="profile-mobile-wrapper">
 						<li #mobileProfile class="topbar-item profile-item" [ngClass]="{'active-topmenuitem': appMain.activeTopbarItem === mobileProfile}">
 							<a href="#" (click)="appMain.onTopbarItemClick($event,mobileProfile)">
@@ -353,7 +413,10 @@ import {AppMainComponent} from './app.main.component';
 								</li>
 							</ul>
 						</li>
-					</ul>
+	</ul>
+--->
+
+				
                 </div>
             </div>
         </div>

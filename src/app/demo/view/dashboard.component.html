@@ -1,9 +1,75 @@
-<div class="grid layout-dashboard">
+<!---
+<style>
+    .image-container {
+        position: relative;
+        display: inline-block;
+    }
+    .image-container {
+    max-width: 90%; /* Largeur ajustée pour les marges */
+    max-height: 85vh; /* Hauteur maximale de 80% de la hauteur de la vue */
+    margin-left:  5%; /* Marges à droite et à gauche de 10% chacune */
+    margin-right: 5%;
+
+    overflow: hidden; /* Masquer toute partie d'image dépassant du conteneur */
+    border: 14px solid #20252e; /* Bordure autour de l'image */
+    border-radius: 16px; /* Coins arrondis de l'image */
+}
+
+.centered-image {
+    display: block;
+    width: 100%; /* Prend la largeur totale du conteneur */
+    height: auto; /* Ajuste automatiquement la hauteur */
+    margin: 0 auto; /* Centre l'image horizontalement */
+}
+    .overlay2 {
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
+    transform: translateX(0,-50%);
+    width: 70%;
+    height: 300px; /* Adjust the height of the overlay as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency by changing the last value (0.5 in this example) */
+    pointer-events: none; /* Allows clicks to go through the overlay to the image */
+
+    text-align: center;
+   
+}
+.overlay-text {
+    color: white; /* Set text color */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Adjust font weight as needed */
+    margin: 0; /* Remove default margin */
+    line-height: 100px; /* Set line height to center the text vertically */
+}
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        left:0;
+        width: 100%;
+        height: 100%; /* Adjust the height of the overlay as needed */
+        background-color: rgba(0, 0, 0, 0.07); /* Adjust the transparency by changing the last value (0.5 in this example) */
+        pointer-events: none; /* Allows clicks to go through the overlay to the image */
+    }
+</style>   --->
+<script>
+    // Get the image container and set the overlay height to match the image
+    document.addEventListener("DOMContentLoaded", function () {
+        var imageContainer = document.getElementById("image-container");
+        var overlay = imageContainer.querySelector(".overlay");
+        overlay.style.height = imageContainer.clientHeight + "px";
+    });
+</script>
+<div >
+
+ <!--
     <div class="col-12 xl:col-3 md:col-6">
         <div class="grid grid-nogutter widget-overview-box overview-box-1">
             <div class="col-3 overview-box-icon">
                 <img src="assets/layout/images/dashboard/icon-messages.svg" alt="mirage-layout" />
             </div>
+
+
+           
             <div class="col-6 overview-box-text">
                 <h5>Messages</h5>
                 <span>24 new since last visit</span>
@@ -13,6 +79,7 @@
             </div>
         </div>
     </div>
+
     <div class="col-12 xl:col-3 md:col-6">
         <div class="grid grid-nogutter widget-overview-box overview-box-2">
             <div class="col-3 overview-box-icon">
@@ -55,7 +122,27 @@
             </div>
         </div>
     </div>
+--->
 
+
+                    <div class="image-container" id="image-container">
+                        <img style="display: block; margin: auto; cursor: zoom-in; background-color: hsl(0, 0%, 90%); transition: background-color 300ms;"
+                             src="assets/layout/images/dashboard/home.jpg" class="centered-image">
+                        <div class="overlay"></div>
+                        <div class="overlay2">
+                            <p class="overlay-text">welcome this is a Text Here
+                                 sdfghjklmsd fghjklm;,fghjklkjhgfghjklm mpgfdmlkjh poiuy
+                                qsdfghjkl; nbgfr-èuik,nbvcdrtyuik nbvcfyuiolkjh gfdfghj
+                                sdfghjkl nbvdjklml nbfdfghjklmlk jhgtyuj
+                            </p>
+                      
+               
+        
+    </div>
+</div>
+   <!---<img src="assets/layout/images/dashboard/home.jpg"  />---> 
+
+<!---
     <div class="col-12 lg:col-6 ">
         <div class="grid flex-column grid-nogutter">
             <div class="col-12 ">
@@ -129,6 +216,62 @@
             </div>
         </div>
     </div>
+--->
+<div class="grid p-fluid">
+    <div class="col-12">
+        <div class="card">
+            <h5>Categories</h5>
+            <p-carousel [value]="categorys" [numVisible]="4" [numScroll]="1" [circular]="false" >
+                <ng-template let-category pTemplate="item">
+                        <div class="border-round m-2 text-center p-2" style="border: 1px solid var(--surface-d)">
+                            <div class="my-5">
+                                <img src="assets/demo/images/category/{{category.image}}" [alt]="category.name" class="shadow-4" width="100%"/>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">{{category.description}}</h5>
+                          
+                                <div class="my-5">
+                                    <button pButton pRipple icon="pi pi-search" class="mr-2 p-button-rounded"></button>
+                                    <button pButton pRipple icon="pi pi-star-fill" class="mr-2 p-button-rounded p-button-success"></button>
+                                    <button pButton pRipple icon="pi pi-cog" class="p-button-rounded p-button-info"></button>
+                                </div>
+                            </div>
+                        </div>
+                </ng-template>
+            </p-carousel>
+        </div>
+    </div>
+<!-----essai 
+
+<div class="grid p-fluid">
+    <div class="col-12">
+        <div class="card">
+            <h5>Categories</h5>
+            <p-carousel [value]="categorys" [numVisible]="4" [numScroll]="4" [circular]="false" >
+                <ng-template let-category pTemplate="item">
+                        <div class="border-round m-2 text-center p-2" style="border: 1px solid var(--surface-d)">
+                          
+                            <div>
+                                <h5 class="mb-1">{{category.name}}</h5>
+                                <div class="my-5">
+                                    <img src="assets/demo/images/product/{{category.image}}" [alt]="category.name" class="shadow-4" width="100%"/>
+                                </div>
+                               
+                                <div class="my-5">
+                                    <button pButton pRipple icon="pi pi-search" class="mr-2 p-button-rounded"></button>
+                                    <button pButton pRipple icon="pi pi-star-fill" class="mr-2 p-button-rounded p-button-success"></button>
+                                    <button pButton pRipple icon="pi pi-cog" class="p-button-rounded p-button-info"></button>
+                                </div>
+                            </div>
+                        </div>
+                </ng-template>
+            </p-carousel>
+        </div>
+    </div>
+-->
+
+
+<!------>
     <div class="col-12 lg:col-6">
         <div class="grid">
             <div class="col-12">

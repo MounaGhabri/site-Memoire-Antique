@@ -1,3 +1,4 @@
+/*
 .layout-topbar {
     background-color: $topbarBgColor;
     position: fixed;
@@ -600,7 +601,7 @@
     }
 }
 
-@media (min-width: $mobileBreakpoint + 1) {
+@media (min-width: $mobileBreakpoint ) {
     .layout-topbar {
         .layout-topbar-wrapper {
             .layout-topbar-left {

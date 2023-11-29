@@ -137,8 +137,10 @@ import {NodeService} from './demo/service/nodeservice';
 import {CustomerService} from './demo/service/customerservice';
 import {PhotoService} from './demo/service/photoservice';
 import {ProductService} from './demo/service/productservice';
+import { CategoryService } from './demo/service/categoryservice';
 import {IconService} from './demo/service/iconservice';
 import {ConfigService} from './demo/service/app.config.service';
+
 
 // Application services
 import {BreadcrumbService} from './breadcrumb.service';
@@ -288,7 +290,7 @@ FullCalendarModule.registerPlugins([
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService, MenuService, BreadcrumbService, ConfigService
+        PhotoService,CategoryService, ProductService, MenuService, BreadcrumbService, ConfigService
     ],
     bootstrap: [AppComponent]
 })

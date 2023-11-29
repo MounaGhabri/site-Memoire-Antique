@@ -8,13 +8,13 @@ import {Subscription} from 'rxjs';
 @Component({
     selector: 'app-config',
     template: `
-        <a href="#" class="layout-config-button" (click)="onConfigButtonClick($event)">
+        <a href="#" class="layout-config-button"   (click)="onConfigButtonClick($event)">
             <i class="pi pi-cog"></i>
         </a>
         <div id="layout-config" class="layout-config" [ngClass]="{'layout-config-exit-done': !appMain.configActive,
         'layout-config-enter-done': appMain.configActive}" [@children]="appMain.configActive ? 'visibleAnimated' : 'hiddenAnimated'">
             <div class="layout-config-content">
-                <a href="#" class="layout-config-close" (click)="onConfigCloseClick($event)">
+                <a href="#" class="layout-config-close" (click)="onConfigCloseClick($event) ">
                     <i class="pi pi-times"></i>
                 </a>
                 <p-tabView id="config-form-tabs">
@@ -260,12 +260,22 @@ export class AppConfigComponent implements OnInit {
             this.changeLightDarkLayout('layout-css', this.selectedColorOptions[0].file, 'layout-dark');
             this.changeLightDarkTheme('theme-css', 'theme-dark');
         } else {
+
+
+
+
+
+
+            
             this.app.menuColorMode = 'light';
             this.app.menuColor = 'layout-menu-light';
             this.selectedColorOptions = this.lightColors;
             this.app.layoutColor = this.selectedColorOptions[0].file;
             this.changeLightDarkLayout('layout-css', this.selectedColorOptions[0].file, 'layout-light');
             this.changeLightDarkTheme('theme-css', 'theme-light');
+
+
+
         }
         this.configService.updateConfig({...this.config, ...{dark: mode}});
         event.preventDefault();

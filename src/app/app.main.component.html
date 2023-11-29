@@ -8,22 +8,26 @@
                 'p-input-filled': app.inputStyle === 'filled',
                 'p-ripple-disabled': !app.ripple}" [class]="app.menuColor">
 
-    <app-menu></app-menu>
+       <app-menu></app-menu>  
 
     <div class="layout-main">
-        <app-topbar></app-topbar>
+      <app-topbar></app-topbar> 
 
-        <app-rightpanel></app-rightpanel>
+     <app-rightpanel></app-rightpanel> 
 
-        <app-breadcrumb></app-breadcrumb>
+
+       <!----notifications on left, dashboard on right -->
+        <!---<app-breadcrumb></app-breadcrumb>--->
 
         <div class="layout-content">
-            <router-outlet></router-outlet>
+        
+            <!----- Dashoard-->
+       <router-outlet></router-outlet> 
+   
         </div>
-
         <app-footer></app-footer>
-
-        <app-config></app-config>
+        
+   <app-config></app-config>   
 
         <div class="layout-main-mask"></div>
 

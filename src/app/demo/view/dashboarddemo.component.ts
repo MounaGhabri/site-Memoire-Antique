@@ -6,12 +6,15 @@ import {Product} from '../domain/product';
 import {AppConfig} from '../domain/appconfig';
 import {ConfigService} from '../service/app.config.service';
 import {Subscription} from 'rxjs';
+import { Category } from '../domain/category';
+import {CategoryService} from '../service/categoryservice';
 
 @Component({
     templateUrl: './dashboard.component.html',
     styleUrls: ['../../../assets/demo/badges.scss']
 })
 export class DashboardDemoComponent implements OnInit {
+[x: string]: any;
 
     lineChartData: any;
 
@@ -28,6 +31,7 @@ export class DashboardDemoComponent implements OnInit {
     selectedCar: any;
 
     products: Product[];
+    categorys:Category[];
 
     events: any[];
 
@@ -35,7 +39,7 @@ export class DashboardDemoComponent implements OnInit {
 
     config: AppConfig;
 
-    constructor(private productService: ProductService, private breadcrumbService: BreadcrumbService, public configService: ConfigService) {
+    constructor(private productService: ProductService,private categoryService:CategoryService     , private breadcrumbService: BreadcrumbService, public configService: ConfigService) {
       this.breadcrumbService.setItems([
           {label: 'Dashboard', routerLink: ['/']}
       ]); 
@@ -48,9 +52,19 @@ export class DashboardDemoComponent implements OnInit {
       });
     }
 
+ 
+
+
+
+
+
+
     ngOnInit() {
         this.productService.getProducts().then(data => this.products = data);
-
+/*ajout categorys*/ 
+        this.categoryService.getCategorys().then(data => this.categorys = data);
+        
+/**/ 
         this.lineChartData = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [

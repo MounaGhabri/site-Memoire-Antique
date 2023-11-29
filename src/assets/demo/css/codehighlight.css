@@ -197,7 +197,8 @@
      }
  
  }
- 
+
+
  /* Plugin styles */
  .token.tab:not(:empty)::before,
  .token.cr::before,

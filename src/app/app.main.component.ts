@@ -58,7 +58,12 @@ export class AppMainComponent {
     constructor(public renderer: Renderer2, private menuService: MenuService,
                 private primengConfig: PrimeNGConfig, public app: AppComponent) {}
 
-    onLayoutClick() {
+
+
+
+
+
+    onLayoutClick() {    
         if (!this.topbarItemClick) {
             this.activeTopbarItem = null;
             this.topbarMenuActive = false;
@@ -143,6 +148,14 @@ export class AppMainComponent {
         event.preventDefault();
     }
 
+
+
+
+
+
+    
+
+    
     onMegaMenuMobileButtonClick(event) {
         this.megaMenuMobileClick = true;
         this.megaMenuMobileActive = !this.megaMenuMobileActive;
