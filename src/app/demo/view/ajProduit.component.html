@@ -1,0 +1,75 @@
+
+<style>
+	.centered-form {
+		margin: 0 auto; /* Pour centrer horizontalement */
+		width: 20%; /* Largeur du formulaire, ajustez selon vos besoins */
+	}
+	.centered-button {
+		margin:  20px; /* Pour centrer horizontalement */
+		width: 20%; /* Largeur du formulaire, ajustez selon vos besoins */
+	}
+
+
+</style>
+bonjour
+	<h2 style="margin-left: 60px;">Fiche produit</h2>
+	<div class="centered-form">
+<div class="centered-form">
+	<form #produitForm="ngForm" (ngSubmit)="validerFormulaire(produitForm)">
+		
+		<h5>Code</h5>
+		<div class="grid formgrid">
+			<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+				<input type="text" name="code" [(ngModel)]="nouveauProduit.code">
+			</div>
+			
+		</div>
+
+		<h5>Désignation</h5>
+		<div class="grid formgrid">
+			<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+				<input type="text" name="designation" [(ngModel)]="nouveauProduit.designation">
+			</div>
+		</div>
+		<h5>Description</h5>
+		<div class="grid formgrid">
+			<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+				<input type="text" name="description" [(ngModel)]="nouveauProduit.description">
+			</div>
+		</div>
+
+
+
+
+		<h5>Prix</h5>
+		<div class="grid formgrid">
+			<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+				<input type="text" name="prix" [(ngModel)]="nouveauProduit.prix">
+			</div>
+			</div>
+			<h5>Catègorie</h5>
+		<div class="grid formgrid">
+			<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+				<input type="text" name="categorie" [(ngModel)]="nouveauProduit.categorie.libelle">
+			</div>
+		</div>
+		<h5>Image</h5>
+		<div class="grid formgrid">
+			<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+				<input type="text" name="image" [(ngModel)]="nouveauProduit.image">
+			</div>
+		</div>	
+
+
+	
+		<div class="centered-button">
+	<!---	<button class="text-center" pButton pRipple type="button" label="Valider " class="p-button-rounded p-button-warning mr-2 mb-2"
+		type ="submit" value="Valider"  [disabled]="!produitForm.form.valid" 
+		></button> --->
+		<button pButton pRipple label="Valider" icon="pi pi-bookmark" class="mr-2 mb-2"
+		type ="submit" value="Valider"  [disabled]="!produitForm.form.valid"  ></button>
+</div>
+
+	</form>
+</div>
+</div>

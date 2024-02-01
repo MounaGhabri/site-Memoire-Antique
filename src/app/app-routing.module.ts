@@ -30,12 +30,14 @@ import {AppCrudComponent} from './pages/app.crud.component';
 import {AppCalendarComponent} from './pages/app.calendar.component';
 import {AppTimelineDemoComponent} from './pages/app.timelinedemo.component';
 import {BlocksComponent} from './blocks/blocks/blocks.component';
+import { AjProduitComponent } from './demo/view/ajProduit.component';
 
 @NgModule({
     imports: [
         RouterModule.forRoot([
             {
                 path: '', component: AppMainComponent,
+               
                 children: [
                     {path: '', component: DashboardDemoComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
@@ -45,6 +47,7 @@ import {BlocksComponent} from './blocks/blocks/blocks.component';
                     {path: 'uikit/button', component: ButtonDemoComponent},
                     {path: 'uikit/table', component: TableDemoComponent},
                     {path: 'uikit/list', component: ListDemoComponent},
+                    {path: 'ajProd', component: AjProduitComponent},
                     {path: 'uikit/tree', component: TreeDemoComponent},
                     {path: 'uikit/panel', component: PanelsDemoComponent},
                     {path: 'uikit/overlay', component: OverlaysDemoComponent},

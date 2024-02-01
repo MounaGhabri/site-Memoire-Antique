@@ -1,8 +1,77 @@
-<div class="grid">
-    <div class="col-12">
-        <div class="card">
-            <h4>Empty Page</h4>
-            <p>This is your empty page template to start building beautiful applications.</p>
-        </div>
-    </div>
+
+
+<style>
+	.centered-form {
+		margin: 0 auto; /* Pour centrer horizontalement */
+		width: 20%; /* Largeur du formulaire, ajustez selon vos besoins */
+	}
+	.centered-button {
+		margin: 20px auto; /* Pour centrer horizontalement et verticalement */
+		width: 100%; /* Largeur du bouton, ajustez selon vos besoins */
+	}
+</style>
+
+
+<h2 style="margin-left: 60px;">Fiche produit</h2>
+<div class="centered-form">
+<form #produitForm="ngForm" (ngSubmit)="validerFormulaire(produitForm)">
+
+	<h5>Code</h5>
+		<div class="grid formgrid">
+			<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+				<input type="text" name="code" [(ngModel)]="nouveauProduit.code" required>
+			</div>
+		</div>
+		
+
+	<h5>Désignation</h5>
+		<div class="grid formgrid">
+			<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+				<input type="text" name="designation" [(ngModel)]="nouveauProduit.designation" required>
+			</div>
+		</div>
+		<h5>Description</h5>
+		<div class="grid formgrid">
+			<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+				<input type="text" name="description" [(ngModel)]="nouveauProduit.description" required>
+			</div>
+		</div>
+
+		<h5>Prix</h5>
+		<div class="grid formgrid">
+			<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+				<input type="text" name="prix" [(ngModel)]="nouveauProduit.prix" required>
+			</div>
+		</div>
+
+		<h5>Catégorie</h5>
+		<div class="grid formgrid">
+		  <div class="col-12 mb-2 lg:col-4 lg:mb-0">
+			<select name="categorie" [(ngModel)]="nouveauProduit.categorie" required>
+			 
+			  <option *ngFor="let categorie of categorys" [value]="categorie.libelle">{{ categorie.libelle }}</option>
+			</select>
+		  </div>
+		</div>
+	
+		
+		<h5>Image</h5>
+		<div class="grid formgrid">
+			<div class="col-12 mb-2 lg:col-4 lg:mb-0">
+				<input type="text" name="image" [(ngModel)]="nouveauProduit.image" required>
+			</div>
+		</div>	
+
+	
+
+
+
+
+	<div class="centered-button">
+	
+			<button pButton pRipple label="Valider" icon="pi pi-bookmark" class="mr-2 mb-2"
+			type ="submit" value="validerFormulaire"  [disabled]="!produitForm.form.valid"  ></button>
+	</div>
+		</form>
+
 </div>

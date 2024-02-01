@@ -1,8 +1,12 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component, NgModule, Renderer2 } from '@angular/core';
 import { MenuService } from './app.menu.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { PrimeNGConfig } from 'primeng/api';
 import {AppComponent} from './app.component';
+
+
+
+
 
 @Component({
     selector: 'app-main',

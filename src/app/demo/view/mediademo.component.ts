@@ -3,13 +3,17 @@ import { ProductService } from '../service/productservice';
 import { PhotoService } from '../service/photoservice';
 import { Product } from '../domain/product';
 import { BreadcrumbService } from 'src/app/breadcrumb.service';
+import { Category } from '../domain/category';
+import {CategoryService} from '../service/categoryservice';
+
 
 @Component({
+    selector: 'app-media-demo',
     templateUrl: './mediademo.component.html',
     styleUrls: ['../../../assets/demo/badges.scss']
 })
 export class MediaDemoComponent implements OnInit{
-
+    categorys:Category[];
     products: Product[];
 
     images: any[];
@@ -52,7 +56,7 @@ export class MediaDemoComponent implements OnInit{
     ];
 
     constructor(private breadcrumbService: BreadcrumbService,
-                private productService: ProductService, private photoService: PhotoService) {
+                private productService: ProductService, private categoryService: CategoryService,private photoService: PhotoService) {
         this.breadcrumbService.setItems([
             { label: 'UI Kit' },
             { label: 'Media', routerLink: ['/uikit/media'] }
@@ -63,6 +67,8 @@ export class MediaDemoComponent implements OnInit{
         this.productService.getProductsSmall().then(products => {
             this.products = products;
         });
+
+        this.categoryService.getCategorys().then(data => this.categorys = data);
 
         this.photoService.getImages().then(images => {
             this.images = images;

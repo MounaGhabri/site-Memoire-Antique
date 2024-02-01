@@ -98,7 +98,7 @@ export class AppCrudComponent implements OnInit {
     saveProduct() {
         this.submitted = true;
 
-        if (this.product.name.trim()) {
+        if (this.product.designation.trim()) {
             if (this.product.id) {
                 // @ts-ignore
                 this.product.inventoryStatus = this.product.inventoryStatus.value ? this.product.inventoryStatus.value: this.product.inventoryStatus;
@@ -106,7 +106,7 @@ export class AppCrudComponent implements OnInit {
                 this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000});
             } else {
                 this.product.id = this.createId();
-                this.product.code = this.createId();
+              //  this.product.code = this.createId();
                 this.product.image = 'product-placeholder.svg';
                 // @ts-ignore
                 this.product.inventoryStatus = this.product.inventoryStatus ? this.product.inventoryStatus.value : 'INSTOCK';

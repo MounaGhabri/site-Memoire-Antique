@@ -9,6 +9,7 @@ import {Subscription} from 'rxjs';
 import { Category } from '../domain/category';
 import {CategoryService} from '../service/categoryservice';
 
+
 @Component({
     templateUrl: './dashboard.component.html',
     styleUrls: ['../../../assets/demo/badges.scss']

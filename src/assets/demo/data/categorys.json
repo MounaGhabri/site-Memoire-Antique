@@ -2,51 +2,50 @@
 	"data": [
 		{
 			"id": "1000",
-			"code": "f230fh0g3",
+			
 			"name": "Textiles anciens",
 			"description": "coussins, abat-jours, tapis, rideaux...",
 			"image": "textiles-anciens.jpg"		
 		},
 		{
 			"id": "1001",
-			"code": "f230fh0g3",
+			
 			"name": "Architecture et matériaux",
 			"description": "matériaux anciens",
 			"image": "architecture-mat.jpg"
 		},
 		{
 			"id": "1002",
-			"code": "f230fh0g3",
+			
 			"name": "Brocante",
 			"description": "objets de campagne, art populaire",
 			"image": "brocante.jpg"
 		},
 		{
 			"id": "1003",
-			"code": "f230fh0g3",
+			
 			"name": "Tableaux et miroirs",
-			"description": "peintures, dessin, gravures, miroirs, trumeaux...",
+			"description": "peintures, dessin, gravures, miroirs...",
 			"image": "tableaux-miroirs.jpg"
 		},
 		{
 			"id": "1004",
-			"code": "f230fh0g3",
+			
 			"name": "Mobiliers anciens",
-			"description": "fauteuils, bergères, canapés, guéridons, tables, armoires...",
+			"description": "fauteuils, bergères, canapés, tables...",
 			"image": "mobilier-ancien.jpg"
 		},
 		{
 			"id": "1005",
-			"code": "f230fh0g3",
+		
 			"name": "Objets anciens",
-			"description": "faïences, argenterie, pendules, cristallerie...",
+			"description": "argenterie, pendules, cristallerie...",
 			"image": "objets-anciens.jpg"
 		},
 		{
 			"id": "1005",
-			"code": "f230fh0g3",
 			"name": "Luminaires",
-			"description": "lustres, lampes de table, girandoles, appliques...",
+			"description": "lustres, lampes de table, girandoles...",
 			"image": "luminaires.jpg"
 		}
 

@@ -151,6 +151,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 
+import { AjProduitComponent } from './demo/view/ajProduit.component';
+
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
     timeGridPlugin,
@@ -285,7 +287,8 @@ FullCalendarModule.registerPlugins([
         DocumentationComponent,
         IconsComponent,
         BlocksComponent,
-        BlockViewer
+        BlockViewer,
+        AjProduitComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

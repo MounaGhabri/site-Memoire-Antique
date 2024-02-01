@@ -3,6 +3,16 @@ import {CountryService} from '../service/countryservice';
 import {SelectItem} from 'primeng/api';
 import {BreadcrumbService} from '../../breadcrumb.service';
 
+import {Product} from '../domain/product';
+import {ProductService} from '../service/productservice';
+import { NgForm } from '@angular/forms';
+import {CategoryService} from '../service/categoryservice';
+import { FormsModule } from '@angular/forms';
+import { ListDemoComponent } from './listdemo.component';
+
+
+
+
 @Component({
     templateUrl: './inputdemo.component.html',
     styles: [`:host ::ng-deep .p-multiselect {
@@ -53,6 +63,8 @@ import {BreadcrumbService} from '../../breadcrumb.service';
     `]
 })
 export class InputDemoComponent implements OnInit{
+
+    p=new ListDemoComponent( this.productService,this.categoryService , this.breadcrumbService); 
     countries: any[];
 
     filteredCountries: any[];
@@ -89,7 +101,7 @@ export class InputDemoComponent implements OnInit{
 
     valueKnob = 20;
 
-    constructor(private countryService: CountryService, private breadcrumbService: BreadcrumbService) {
+    constructor(private productService :ProductService, private categoryService: CategoryService,private countryService: CountryService, private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
             { label: 'UI Kit' },
             { label: 'Input', routerLink: ['/uikit/input'] }
@@ -97,6 +109,7 @@ export class InputDemoComponent implements OnInit{
     }
 
     ngOnInit() {
+        this.productService.getProducts();
         this.countryService.getCountries().then(countries => {
             this.countries = countries;
         });
@@ -115,7 +128,19 @@ export class InputDemoComponent implements OnInit{
             {name: 'Option 3', value: 3}
         ];
     }
-
+    validerFormulaire(form: NgForm) {
+    
+        console.log(form.value);
+      
+      //  if (form.value.id != undefined) { // id existe dans la zone du texte 
+          console.log("id non vide...");
+          this.ajouterProduit(form.value);
+       // } else {
+        //  console.log("id vide...");
+         // this.ajouterProduit(form.value);
+      //   }
+      
+      }
     filterCountry(event) {
         const filtered: any[] = [];
         const query = event.query;
@@ -127,5 +152,34 @@ export class InputDemoComponent implements OnInit{
         }
 
         this.filteredCountries = filtered;
+    }
+    nouveauProduit=new Product();
+    ///
+    ajouterProduit(nouveau: Product) {
+   
+   
+     this.productService.addProduit(nouveau).subscribe({
+       next: (addedProduit: Product) => {
+         console.log("Succès POST", addedProduit);
+        // if (addedProduits && addedProduits.length > 0) {
+         //  const addedProduit = addedProduits[0];
+           this.p.products.push({
+         //    id: addedProduit.id,
+             code: addedProduit.code,
+             designation: addedProduit.designation,
+             prix: addedProduit.prix
+           });
+           console.log("Ajout d'un nouveau produit:" );
+   
+           alert("Produit ajouté avec succès");
+       //  } else {
+        //   console.log("Aucun produit ajouté ou ajout incorrect");
+      //   }
+       },
+       error: err => {
+         console.log("Erreur POST", err);
+       }
+     });
+   
     }
 }

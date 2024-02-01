@@ -1,12 +1,16 @@
-export interface Product {
+import { Category } from "./category";
+
+export class Product {
     id?: string;
     code?: string;
-    name?: string;
+    designation?: string;
     description?: string;
-    price?: number;
-    quantity?: number;
-    inventoryStatus?: string;
-    category?: string;
-    image?: string;
-    rating?: number;
+    prix?: number;
+   // quantity?: number;
+   // inventoryStatus?: string;
+    categorie?: Category;
+   image?: string;
+   // rating?: number; 
 }
+
+

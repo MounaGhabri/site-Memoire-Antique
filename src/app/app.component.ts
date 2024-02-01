@@ -1,5 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {PrimeNGConfig} from 'primeng/api';
+
+import {ConfigService} from './demo/service/app.config.service';
+import {AppConfig} from './demo/domain/appconfig';
+import { AppConfigComponent } from './app.config.component';
 
 @Component({
     selector: 'app-root',
@@ -7,13 +11,18 @@ import {PrimeNGConfig} from 'primeng/api';
 })
 export class AppComponent implements OnInit{
 
+    @ViewChild(AppConfigComponent)
+    private appConfigComponent: AppConfigComponent;
+
+
+
     horizontalMenu: boolean;
 
-    darkMode = false;
+    darkMode = true;
 
-    menuColorMode = 'light';
+    menuColorMode = 'dark';
 
-    menuColor = 'layout-menu-light';
+    menuColor = 'layout-menu-dark';
 
     themeColor = 'blue';
 
@@ -22,13 +31,18 @@ export class AppComponent implements OnInit{
     ripple = true;
 
     inputStyle = 'outlined';
+    
 
-
+    
     constructor(private primengConfig: PrimeNGConfig) {}
+
 
     ngOnInit() {
         this.primengConfig.ripple = true;
-  
+   
+      
+        this.darkMode=true;
+
 
         
     }
